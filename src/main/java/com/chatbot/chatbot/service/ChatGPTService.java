@@ -4,21 +4,18 @@ import com.chatbot.chatbot.model.ChatGPTRequest;
 import com.chatbot.chatbot.model.ChatGPTResponse;
 import com.chatbot.chatbot.model.Message;
 import com.chatbot.chatbot.repositories.ChatHistoryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
 public class ChatGPTService {
 
-    @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${openai.api.url}")
     private String apiUrl;
 
     private ChatHistoryRepository chatHistoryRepository;
+
     private String sessionId;
 
     public ChatGPTService(RestTemplate restTemplate, String apiUrl, ChatHistoryRepository chatHistoryRepository) {
