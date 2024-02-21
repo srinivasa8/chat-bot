@@ -15,13 +15,11 @@ public class ChatHistoryRepository {
     }
 
     public void updateChatHistory(String sessionId, String message, boolean isUser) {
-        List<Message> chat = chatHistoryMap.getOrDefault(sessionId, new ArrayList<>());
+        List<Message> chat = getChatHistory(sessionId);
         if (isUser) {
-            //chat.append("User: ");
             chat.add(new Message("user", message));
         } else {
             chat.add(new Message("system", message));
-           // chat.append("ChatGPT: ");
         }
        chatHistoryMap.put(sessionId,chat);
     }

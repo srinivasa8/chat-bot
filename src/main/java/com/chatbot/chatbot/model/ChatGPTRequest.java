@@ -1,6 +1,5 @@
 package com.chatbot.chatbot.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChatGPTRequest {
@@ -11,7 +10,6 @@ public class ChatGPTRequest {
     public ChatGPTRequest(String model, List<Message> messages) {
         this.model = model;
         this.messages = messages;
-        //this.messages.add(new Message("user", prompt));
     }
 
     public List<Message> getMessages() {
